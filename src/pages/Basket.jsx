@@ -44,12 +44,12 @@ const Basket = observer(() => {
   return (
     <Container>
       {user.basket.map((device, i) => (
-        <div key={device.id + i} className='d-flex justify-content-between'>
+        <div key={device.id + '_' +  i} className='d-flex justify-content-between'>
           {device.name} | {device.price}₽
           <Button onClick={() => deleteDevice(device.id)} variant='outline-warning'>X</Button>
         </div>
       ))}
-      Общая Цена : {countPrice()}
+      Общая Цена : {countPrice()}₽
     </Container>
   )
 })
